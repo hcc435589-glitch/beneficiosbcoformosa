@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beneficios de la Ciudad de Formosa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .benefit-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+            text-align: center;
+        }
+
+        .benefit-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .benefit-description {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .highlight-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .highlight-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .highlight-text {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .benefit-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+        .benefit-card:nth-child(5) { animation-delay: 0.5s; }
+        .benefit-card:nth-child(6) { animation-delay: 0.6s; }
+        .benefit-card:nth-child(7) { animation-delay: 0.7s; }
+        .benefit-card:nth-child(8) { animation-delay: 0.8s; }
+
+        @media (max-width: 768px) {
+            .header-title {
+                font-size: 2.5rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .benefit-card {
+                padding: 25px;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="header-title">🌿 Formosa</h1>
+            <p class="header-subtitle">Capital de la Provincia de Formosa - Descubre todos sus beneficios</p>
+        </header>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">🌍</div>
+                <h3 class="benefit-title">Ubicación Estratégica</h3>
+                <p class="benefit-description">
+                    Formosa se encuentra en una posición privilegiada como puerta de entrada al norte argentino, 
+                    con conexiones directas a Paraguay y proximidad a Bolivia y Brasil. Su ubicación facilita 
+                    el comercio internacional y el intercambio cultural en el corazón de Sudamérica.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🏞️</div>
+                <h3 class="benefit-title">Biodiversidad Única</h3>
+                <p class="benefit-description">
+                    La ciudad está rodeada de una naturaleza excepcional con humedales, selvas subtropicales 
+                    y ecosistemas únicos. El Parque Nacional Río Pilcomayo y la Reserva de Biosfera Laguna Oca 
+                    ofrecen paisajes incomparables y una rica fauna autóctona.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🌡️</div>
+                <h3 class="benefit-title">Clima Subtropical</h3>
+                <p class="benefit-description">
+                    Disfruta de un clima cálido durante todo el año que permite actividades al aire libre 
+                    constantemente. Las temperaturas moderadas en invierno y los veranos vibrantes crean 
+                    un ambiente ideal para el turismo y la vida urbana.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🎭</div>
+                <h3 class="benefit-title">Riqueza Cultural</h3>
+                <p class="benefit-description">
+                    Formosa preserva tradiciones ancestrales de pueblos originarios como los Pilagá, Wichí y Toba. 
+                    La música folklórica, las artesanías tradicionales y las festividades culturales enriquecen 
+                    la identidad única de la región.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🏗️</div>
+                <h3 class="benefit-title">Desarrollo e Infraestructura</h3>
+                <p class="benefit-description">
+                    La ciudad ha experimentado un crecimiento sostenido con mejoras en infraestructura urbana, 
+                    servicios públicos modernos, hospitales equipados y sistemas educativos de calidad que 
+                    garantizan una alta calidad de vida para sus habitantes.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">💼</div>
+                <h3 class="benefit-title">Oportunidades Económicas</h3>
+                <p class="benefit-description">
+                    Como centro administrativo provincial, Formosa ofrece oportunidades laborales en el sector 
+                    público y privado. El desarrollo del agro, turismo y comercio fronterizo genera nuevas 
+                    posibilidades de emprendimiento e inversión.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🎣</div>
+                <h3 class="benefit-title">Turismo y Recreación</h3>
+                <p class="benefit-description">
+                    Los ríos Paraguay y Pilcomayo ofrecen actividades acuáticas, pesca deportiva y turismo 
+                    ecológico. La costanera y los espacios verdes urbanos brindan lugares ideales para el 
+                    esparcimiento y la recreación familiar.
+                </p>
+            </div>
+
+            <div class="benefit-card">
+                <div class="benefit-icon">🤝</div>
+                <h3 class="benefit-title">Calidad de Vida</h3>
+                <p class="benefit-description">
+                    Formosa combina la tranquilidad de una ciudad de tamaño medio con servicios urbanos 
+                    modernos. La baja densidad poblacional, espacios verdes abundantes y el ritmo de vida 
+                    relajado crean un ambiente ideal para las familias.
+                </p>
+            </div>
+        </div>
+
+        <div class="highlight-section">
+            <h2 class="highlight-title">¡Descubre Formosa!</h2>
+            <p class="highlight-text">
+                Una ciudad que combina la autenticidad del norte argentino con oportunidades de desarrollo, 
+                naturaleza exuberante y una comunidad acogedora. Formosa te espera con los brazos abiertos 
+                para que vivas, trabajes o visites este rincón especial de Argentina.
+            </p>
+        </div>
+    </div>
+</body>
+</html>
